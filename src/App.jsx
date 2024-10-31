@@ -1,12 +1,16 @@
-import { useState } from 'react'
+import { Header, Footer } from './components'
 
 import './App.css'
+import { Outlet } from 'react-router-dom'
 
 function App() {
 
   return (
    <>
-   <h1>React Router</h1></>
+   <Header/>
+   <Outlet/>
+   <Footer/>
+   </>
   )
 }
 
