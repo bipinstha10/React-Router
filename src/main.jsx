@@ -1,10 +1,9 @@
-import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { StrictMode } from 'react'
 import './index.css'
 import App from './App.jsx'
-import { Home, About, Contact } from './components'
-import { createBrowserRouter, createRoutesFromChildren, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import { Home, About, Contact, User, Github, GithubInfo } from './components'
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 
 // const router = createBrowserRouter([
 //   {
@@ -33,6 +32,11 @@ const router = createBrowserRouter(
       <Route path='' element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
+      <Route path='user/:userID' element={<User />} />
+      <Route
+        loader={GithubInfo}
+        path='github'
+        element={<Github />} />
      </Route>
   )
 )
